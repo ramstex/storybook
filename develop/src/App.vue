@@ -1,5 +1,14 @@
 <template>
-	<div>
-		<h1>Hello World!</h1>
+	<div class="app">
+		<div class="app__container"></div>
 	</div>
 </template>
+
+<style lang="scss">
+.app {
+	width: 100%;
+	&__container {
+		width: 100%;
+	}
+}
+</style>
