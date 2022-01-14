@@ -8,8 +8,8 @@
 		"url": "git+ssh://git@github.com/ramstex/storybook.git"
 	},
 	"scripts": {
-		"build": "webpack --config webpack.config.dev.js",
-		"dev": "webpack-dev-server --config webpack.config.dev.js"
+		"build": "webpack --config webpack.config.js",
+		"dev": "webpack-dev-server --config webpack.config.js"
 	},
 	"author": "Roman Polunin",
 	"license": "ISC",
@@ -23,6 +23,7 @@
 	},
 	"devDependencies": {
 		"css-loader": "^6.5.1",
+		"html-loader": "^3.1.0",
 		"html-webpack-plugin": "^5.5.0",
 		"node-sass": "^7.0.1",
 		"sass": "^1.45.1",

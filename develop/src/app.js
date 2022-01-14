@@ -5,5 +5,10 @@ import Router from './plugins/router.js';
 new Vue({
 	el: '#app',
 	router: Router,
+
 	render: h => h(App),
+
+	mounted() {
+		console.log(this);
+	},
 });
