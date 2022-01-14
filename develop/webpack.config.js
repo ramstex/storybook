@@ -4,7 +4,16 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const __host = 'localhost';
 const __port = '8080';
-const __baseUrl = `http://${__host}:${__port}/`
+let __baseUrl;
+
+switch ( process.env.npm_lifecycle_event ) {
+	case 'build':
+		__baseUrl = 'file:///C:/work/storybook/js/';
+		break;
+	default:
+		__baseUrl = `http://${__host}:${__port}/`;
+		break;
+}
 
 export default {
 	mode: 'development',

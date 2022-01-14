@@ -14,7 +14,7 @@
 			},
 
 			onContactsClick() {
-				this.$router.push('/index.php/contacts');
+				this.$router.push({ name: 'contacts' });
 			},
 		},
 	}
