@@ -1,5 +1,5 @@
 import PageHome from './src/pages/home/index.vue';
-import PageContacts from './src/pages/contacts/index.vue';
+import PageStorybook from './src/pages/storybook/index.vue';
 
 export default {
 	mode: 'history',
@@ -12,9 +12,9 @@ export default {
 		},
 
 		{
-			path: '/index.php/contacts',
-			name: 'contacts',
-			component: PageContacts,
+			path: '/index.php/storybook',
+			name: 'storybook',
+			component: PageStorybook,
 		},
 	],
 }

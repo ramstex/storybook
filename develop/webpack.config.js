@@ -28,6 +28,12 @@ export default {
 		publicPath: __baseUrl,
 	},
 
+	resolve: {
+		alias: {
+			'@': path.resolve('resources/sass'),
+		},
+	},
+
 	devServer: {
 		hot: true,
 		historyApiFallback: true,
@@ -42,7 +48,7 @@ export default {
 				use: 'vue-loader',
 			},
 			{
-				test: /\.scss$/,
+				test: /\.s[ac]ss$/,
 				use: [
 					'vue-style-loader',
 					'css-loader',
@@ -76,5 +82,4 @@ export default {
 			inject: 'body',
 		} ),
 	],
-
 };
