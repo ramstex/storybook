@@ -28,12 +28,6 @@ export default {
 		publicPath: __baseUrl,
 	},
 
-	resolve: {
-		alias: {
-			'@': path.resolve('resources/sass'),
-		},
-	},
-
 	devServer: {
 		hot: true,
 		historyApiFallback: true,
@@ -52,9 +46,14 @@ export default {
 				use: [
 					'vue-style-loader',
 					'css-loader',
-					'sass-loader',
-				]
-			}
+					{
+						loader: 'sass-loader',
+						options: {
+							additionalData: '@import "./src/style/globals/globals.scss";',
+						},
+					},
+				],
+			},
 		],
 	},
 

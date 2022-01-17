@@ -1,6 +1,6 @@
 <template>
-	<div>
-		<h1>Home page</h1>
+	<div class="home-page">
+		<h2 class="home-page__title">Home page</h2>
 		<button @click="onAlertClick">alert</button>
 		<button @click="onContactsClick">contacts</button>
 	</div>
@@ -10,7 +10,7 @@
 	export default {
 		methods: {
 			onAlertClick() {
-				alert('AAAAAAAAAAAAAAAAAAA');
+				alert('ALERT');
 			},
 
 			onContactsClick() {
@@ -19,3 +19,12 @@
 		},
 	}
 </script>
+
+<style lang="scss">
+.home-page {
+	&__title {
+		//noinspection SassScssResolvedByNameOnly
+		@include text_h1;
+	}
+}
+</style>

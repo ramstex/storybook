@@ -1,0 +1,46 @@
+@import 'src.scss';
+
+//	Дефолтные стили
+h1,
+.h1 {
+	@include text_h1;
+}
+
+h2,
+.h2 {
+	@include text_h2;
+}
+
+h3,
+.h3 {
+	@include text_h3;
+}
+
+h4,
+.h4 {
+	@include text_h4;
+}
+
+h5,
+.h5 {
+	@include text_h5;
+}
+
+h6,
+.h6 {
+	@include text_h6;
+}
+
+p {
+	font-size: 16px;
+}
+
+a {
+	color: inherit;
+}
+
+//	Модификаторы
+p._text-footnote,
+.p._text-footnote {
+	font-size: 12px;
+}
