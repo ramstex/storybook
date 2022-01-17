@@ -1,3 +1,4 @@
+//	Миксин для заголовка 1-ого уровня
 @mixin text_h1 {
 	font-weight: 600;
 	font-size: 48px;
@@ -5,6 +6,7 @@
 	letter-spacing: -0.02em;
 }
 
+//	Миксин для заголовка 2-ого уровня
 @mixin text_h2 {
 	font-weight: 600;
 	font-size: 36px;
@@ -12,6 +14,7 @@
 	letter-spacing: -0.02em;
 }
 
+//	Миксин для заголовка 3-его уровня
 @mixin text_h3 {
 	font-weight: 600;
 	font-size: 30px;
@@ -19,6 +22,7 @@
 	letter-spacing: -0.02em;
 }
 
+//	Миксин для заголовка 4-ого уровня
 @mixin text_h4 {
 	font-weight: 600;
 	font-size: 24px;
@@ -26,6 +30,7 @@
 	letter-spacing: -0.02em;
 }
 
+//	Миксин для заголовка 5-ого уровня
 @mixin text_h5 {
 	font-weight: 600;
 	font-size: 16px;
@@ -34,6 +39,7 @@
 	text-transform: uppercase;
 }
 
+//	Миксин для заголовка 6-ого уровня
 @mixin text_h6 {
 	font-weight: 600;
 	font-size: 12px;
@@ -41,6 +47,7 @@
 	letter-spacing: -0.02em;
 }
 
+//	Миксин для параграфа
 @mixin text_p {
 	font-size: 16px;
 }

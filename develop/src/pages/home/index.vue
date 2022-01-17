@@ -21,9 +21,10 @@
 </script>
 
 <style lang="scss">
+@import "src/style/globals/globals.scss";
+
 .home-page {
 	&__title {
-		//noinspection SassScssResolvedByNameOnly
 		@include text_h1;
 	}
 }
