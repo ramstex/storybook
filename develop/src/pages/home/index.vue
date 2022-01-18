@@ -1,6 +1,6 @@
 <template>
-	<div class="home-page">
-		<h2 class="home-page__title">Home page</h2>
+	<div class="page-home">
+		<h2 class="page-home__title">Home page</h2>
 		<button @click="onAlertClick">alert</button>
 		<button @click="onContactsClick">contacts</button>
 	</div>
@@ -8,6 +8,8 @@
 
 <script>
 	export default {
+		name: 'PageHome',
+
 		methods: {
 			onAlertClick() {
 				alert('ALERT');
@@ -23,7 +25,7 @@
 <style lang="scss">
 @import "src/style/globals/globals.scss";
 
-.home-page {
+.page-home {
 	&__title {
 		@include text_h1;
 	}
