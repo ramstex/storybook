@@ -1,6 +1,6 @@
-const isAbsoluteUrl = (url) => {
+export const isAbsoluteUrl = (url) => {
 	let is = false;
-	if (!!url) {
+	if (!!url && typeof url === 'string') {
 		let checkList = [
 			'http://',
 			'https://',
@@ -17,10 +17,4 @@ const isAbsoluteUrl = (url) => {
 		}
 	}
 	return is;
-};
-
-export default {
-	install(Vue, options) {
-		Vue.prototype.$isAbsoluteUrl = isAbsoluteUrl;
-	},
 };

@@ -2,7 +2,7 @@
 	<div class="page-home">
 		<h2 class="page-home__title">Home page</h2>
 		<button @click="onAlertClick">alert</button>
-		<button @click="onContactsClick">contacts</button>
+		<button @click="onContactsClick">storybook</button>
 	</div>
 </template>
 
@@ -16,7 +16,7 @@
 			},
 
 			onContactsClick() {
-				this.$router.push({ name: 'contacts' });
+				this.$router.push({ name: 'storybook' });
 			},
 		},
 	}

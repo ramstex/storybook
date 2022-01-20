@@ -2,9 +2,10 @@
 	<div class="app">
 		<Layout>
 			<div class="app__container">
-				<router-link :to="{ name: 'home' }">home</router-link>
-				<router-link :to="{ name: 'contacts' }">contacts</router-link>
-				<router-view></router-view>
+				<BaseLink :to="{ name: 'home' }">home</BaseLink>
+				<BaseLink :to="{ name: 'storybook' }">storybook</BaseLink>
+				<BaseLink to="https://google.com">External Link</BaseLink>
+				<RouterView></RouterView>
 			</div>
 		</Layout>
 	</div>
@@ -12,12 +13,14 @@
 
 <script>
 import Layout from './layouts/index.vue';
+import BaseLink	from './components/base/link/index.vue';
 
 export default {
 	name: 'App',
 
 	components: {
 		Layout,
+		BaseLink,
 	},
 }
 </script>
