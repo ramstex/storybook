@@ -3,6 +3,7 @@
 		class="base-link"
 		v-if="isInternal"
 		:to="$attrs.to"
+		v-bind="$attrs"
 	>
 		<slot />
 	</router-link>
@@ -21,6 +22,7 @@ import { isAbsoluteUrl } from '../../../plugins/helper.js';
 
 export default {
 	name: 'BaseLink',
+	inheritAttrs: false,
 
 	computed: {
 		isRoot() {

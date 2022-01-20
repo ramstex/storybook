@@ -3,7 +3,7 @@
 		<Layout>
 			<div class="app__container">
 				<BaseLink :to="{ name: 'home' }">home</BaseLink>
-				<BaseLink :to="{ name: 'storybook' }">storybook</BaseLink>
+				<BaseLink :to="{ name: 'storybook' }" active-class="bebebe">storybook</BaseLink>
 				<BaseLink to="https://google.com">External Link</BaseLink>
 				<RouterView></RouterView>
 			</div>
