@@ -49,7 +49,18 @@ export default {
 					{
 						loader: 'sass-loader',
 						options: {
-							additionalData: '@import "./src/style/globals/globals.scss";',
+							additionalData: `
+								$breakpoint_mobile_sm: 360px;
+								$breakpoint_mobile_md: 520px;
+								$breakpoint_mobile_lg: 640px;
+								$breakpoint_tablet_sm: 768px;
+								$breakpoint_tablet_md: 920px;
+								$breakpoint_tablet_lg: 1024px;
+								$breakpoint_desktop_sm: 1280px;
+								$breakpoint_desktop_md: 1440px;
+								$breakpoint_desktop_lg: 1680px;
+								@import "./src/style/globals/globals.scss";
+							`,
 						},
 					},
 				],
