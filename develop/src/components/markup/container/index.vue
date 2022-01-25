@@ -9,6 +9,8 @@
 
 <script>
 export default {
+	name: 'MarkupContainer',
+
 	props: {
 		wide: {
 			type: Boolean,
