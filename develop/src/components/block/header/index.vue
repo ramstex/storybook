@@ -1,17 +1,17 @@
 <template>
-	<header class="header">
+	<header class="block-header">
 		<slot></slot>
 	</header>
 </template>
 
 <script>
 export default {
-	name: 'Header',
+	name: 'BlockHeader',
 }
 </script>
 
 <style>
-.header {
+.block-header {
 
 }
 </style>
