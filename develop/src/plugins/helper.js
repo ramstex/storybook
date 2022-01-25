@@ -18,3 +18,7 @@ export const isAbsoluteUrl = (url) => {
 	}
 	return is;
 };
+
+export const getStyleVar = (varName) => {
+	return getComputedStyle(document.documentElement).getPropertyValue(varName);
+}
