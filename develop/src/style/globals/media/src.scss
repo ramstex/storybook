@@ -1,13 +1,34 @@
+$mobile_sm: 360px;
+$mobile_md: 520px;
+$mobile_lg: 640px;
+
+$tablet_sm: 768px;
+$tablet_md: 920px;
+$tablet_lg: 1024px;
+
+$desktop_sm: 1280px;
+$desktop_md: 1440px;
+$desktop_lg: 1680px;
+
 $breakpoints: (
 	'mobile': (
-		'sm': $breakpoint_mobile_sm,
-		'md': $breakpoint_mobile_md,
-		'lg': $breakpoint_mobile_lg,
+		'sm': $mobile_sm,
+		'md': $mobile_md,
+		'lg': $mobile_lg,
 	),
 	'tablet': (
-
+		'sm': $tablet_sm,
+		'md': $tablet_md,
+		'lg': $tablet_lg,
 	),
 	'desktop': (
-
+		'sm': $desktop_sm,
+		'md': $desktop_md,
+		'lg': $desktop_lg,
 	),
 );
+
+@function mediaBreakpoint($device: 'mobile', $breakpoint: 'sm', $modifier: 0) {
+	$device: map-get($breakpoints, $device);
+	@return map-get($device, $breakpoint) + $modifier;
+}

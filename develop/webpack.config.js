@@ -1,19 +1,13 @@
-import path from 'path';
+import { fileURLToPath } from 'url';
+import path, { dirname }  from 'path';
 import { VueLoaderPlugin } from 'vue-loader';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-const __host = 'localhost';
-const __port = '8080';
-let __baseUrl;
+import __config from './app.config.js';
 
-switch ( process.env.npm_lifecycle_event ) {
-	case 'build':
-		__baseUrl = 'file:///C:/work/storybook/js/';
-		break;
-	default:
-		__baseUrl = `http://${__host}:${__port}/`;
-		break;
-}
+const __task = process.env.npm_lifecycle_event;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default {
 	mode: 'development',
@@ -23,16 +17,16 @@ export default {
 	],
 
 	output: {
-		path: path.resolve('../', 'js'),
+		path: path.resolve(__dirname, 'js'),
 		filename: 'index.js',
-		publicPath: __baseUrl,
+		publicPath: __config[__task].baseUrl,
 	},
 
 	devServer: {
 		hot: true,
 		historyApiFallback: true,
-		host: __host,
-		port: __port,
+		host: __config.dev.host,
+		port: __config.dev.port,
 	},
 
 	module: {
@@ -50,16 +44,7 @@ export default {
 						loader: 'sass-loader',
 						options: {
 							additionalData: `
-								$breakpoint_mobile_sm: 360px;
-								$breakpoint_mobile_md: 520px;
-								$breakpoint_mobile_lg: 640px;
-								$breakpoint_tablet_sm: 768px;
-								$breakpoint_tablet_md: 920px;
-								$breakpoint_tablet_lg: 1024px;
-								$breakpoint_desktop_sm: 1280px;
-								$breakpoint_desktop_md: 1440px;
-								$breakpoint_desktop_lg: 1680px;
-								@import "./src/style/globals/globals.scss";
+								@import "./src/style/globals/src.scss";
 							`,
 						},
 					},
@@ -71,9 +56,9 @@ export default {
 	plugins: [
 		new VueLoaderPlugin(),
 
-		//  Генерация index.html требуется только дри разработке.
+		//  Генерация index.html требуется только при разработке.
 		//  Для билда этот файл не нужен.
-		...( process.env.npm_lifecycle_event === 'dev'
+		...( __task === 'dev'
 				?
 					[
 						new HtmlWebpackPlugin( {

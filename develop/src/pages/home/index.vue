@@ -23,7 +23,7 @@
 </script>
 
 <style lang="scss">
-@import "src/style/globals/globals.scss";
+@import "../../style/globals/src";
 
 .page-home {
 	&__title {
