@@ -1,25 +1,33 @@
 <template>
 	<div class="page-home">
-		<h2 class="page-home__title">Home page</h2>
-		<button @click="onAlertClick">alert</button>
-		<button @click="onContactsClick">storybook</button>
+		<MarkupContainer>
+			<h2 class="page-home__title">Home page</h2>
+			<button @click="onAlertClick">alert</button>
+			<button @click="onContactsClick">storybook</button>
+		</MarkupContainer>
 	</div>
 </template>
 
 <script>
-	export default {
-		name: 'PageHome',
+import MarkupContainer from '../../../src/components/markup/container/index.vue';
 
-		methods: {
-			onAlertClick() {
-				alert('ALERT');
-			},
+export default {
+	name: 'PageHome',
 
-			onContactsClick() {
-				this.$router.push({ name: 'storybook' });
-			},
+	components: {
+		MarkupContainer,
+	},
+
+	methods: {
+		onAlertClick() {
+			alert('ALERT');
 		},
-	}
+
+		onContactsClick() {
+			this.$router.push({ name: 'storybook' });
+		},
+	},
+}
 </script>
 
 <style lang="scss">
