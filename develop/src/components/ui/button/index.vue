@@ -24,6 +24,13 @@
 	];
 	const templateDefault = templates[0];
 
+	const themes = [
+		'default',
+		'primary',
+		'secondary',
+	];
+	const themeDefault = themes[0];
+
 	export default {
 		name: 'UiButton',
 		inheritAttrs: false,
@@ -38,6 +45,14 @@
 				default: templateDefault,
 				validator(value) {
 					return templates.indexOf(value) >= 0;
+				},
+			},
+
+			theme: {
+				type: String,
+				default: themeDefault,
+				validator(value) {
+					return themes.indexOf(value) >= 0;
 				},
 			},
 		},
