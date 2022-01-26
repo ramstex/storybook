@@ -116,7 +116,12 @@
 </script>
 
 <style lang="scss">
-.ui-button {
+	@import '../../../style/globals/src.scss';
 
-}
+	.ui-button {
+		padding: $gutter $gutter;
+		@media (min-width: mediaDesktopSm()) {
+
+		}
+	}
 </style>
