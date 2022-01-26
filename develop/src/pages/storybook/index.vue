@@ -1,10 +1,52 @@
 <template>
 	<div class="page-storybook">
-		<MarkupContainer>
+		<MarkupContainer wide>
 			<h1>Storybook page</h1>
 			<div class="page-storybook__row">
 				<div class="page-storybook__col">
 					<UiButton>Обычная кнопка</UiButton>
+				</div>
+				<div class="page-storybook__col">
+					<UiButton invert>Инвертированная кнопка</UiButton>
+				</div>
+				<div class="page-storybook__col">
+					<UiButton ghost>Кнопка-призрак</UiButton>
+				</div>
+				<div class="page-storybook__col">
+					<UiButton invert ghost>Инвертированная кнопка-призрак</UiButton>
+				</div>
+			</div>
+			<div class="page-storybook__row">
+				<div class="page-storybook__col">
+					<UiButton theme="primary">Primary кнопка</UiButton>
+				</div>
+				<div class="page-storybook__col">
+					<UiButton theme="primary" invert>Инвертированная Primary кнопка</UiButton>
+				</div>
+				<div class="page-storybook__col">
+					<UiButton theme="primary" ghost>Кнопка-призрак Primary</UiButton>
+				</div>
+				<div class="page-storybook__col">
+					<UiButton theme="primary" invert ghost>Инвертированная кнопка-призрак Primary</UiButton>
+				</div>
+			</div>
+			<div class="page-storybook__row">
+				<div class="page-storybook__col">
+					<UiButton theme="secondary">Secondary кнопка</UiButton>
+				</div>
+				<div class="page-storybook__col">
+					<UiButton theme="secondary" invert>Инвертированная Secondary кнопка</UiButton>
+				</div>
+				<div class="page-storybook__col">
+					<UiButton theme="secondary" ghost>Кнопка-призрак Secondary</UiButton>
+				</div>
+				<div class="page-storybook__col">
+					<UiButton theme="secondary" invert ghost>Инвертированная кнопка-призрак Secondary</UiButton>
+				</div>
+			</div>
+			<div class="page-storybook__row">
+				<div class="page-storybook__col _full">
+					<UiButton full>Обычная кнопка на всю ширину</UiButton>
 				</div>
 			</div>
 		</MarkupContainer>

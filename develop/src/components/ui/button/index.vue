@@ -73,6 +73,10 @@
 				},
 			},
 
+			ghost: {
+				type: Boolean,
+			},
+
 			disabled: {
 				type: Boolean,
 			},
@@ -104,6 +108,7 @@
 					{ [`_template_${this.template}`]: this.template !== templateDefault },
 					{ [`_theme_${this.theme}`]: this.theme !== themeDefault },
 					{ [`_size_${this.size}`]: this.size !== sizeDefault },
+					{ '_ghost': this.ghost },
 					{ '_disabled': this.disabled },
 					{ '_hover': this.hover },
 					{ '_focus': this.focus },
@@ -128,17 +133,140 @@
 		width: fit-content;
 		//noinspection CssInvalidFunction
 		padding: math.div($gutter, 2) $gutter;
-		border: none;
+		border: 1px solid var(--color-back--invert);
 		cursor: pointer;
 		-webkit-appearance: none;
-		color: var(--color-text--inverse);
+		text-align: center;
+		text-decoration: none;
+		color: var(--color-text--invert);
 		//noinspection CssInvalidFunction
 		font-size: math.div($gutter, 2);
-		background-color: var(--color-back--inverse);
+		background-color: var(--color-back--invert);
 		transition: all $duration ease;
 
-		&:hover {
-			background-color: var(--color-back--hover--inverse);
+		&:hover,
+		&:focus,
+		&._hover,
+		&._focus {
+			border-color: var(--color-back--hover--invert);
+			background-color: var(--color-back--hover--invert);
+		}
+
+		&._full {
+			width: 100%;
+		}
+
+		&._ghost {
+			&:not(:hover):not(:focus):not(._hover):not(._focus) {
+				border-color: var(--color-back--invert);
+				color: var(--color-text);
+				background-color: transparent;
+			}
+		}
+
+		&._invert {
+			border-color: var(--color-back);
+			color: var(--color-text);
+			background-color: var(--color-back);
+
+			&._ghost {
+				&:not(:hover):not(:focus):not(._hover):not(._focus) {
+					border-color: var(--color-basic-back--dark);
+					color: var(--color-basic-back--dark);
+				}
+			}
+
+			&:hover,
+			&:focus,
+			&._hover,
+			&._focus {
+				border-color: var(--color-back--hover);
+				background-color: var(--color-back--hover);
+			}
+		}
+
+		&._theme_primary {
+			border-color: var(--color-primary);
+			color: var(--color-text--on-primary);
+			background-color: var(--color-primary);
+
+			&:hover,
+			&:focus,
+			&._hover,
+			&._focus {
+				border-color: var(--color-primary--hover);
+				background-color: var(--color-primary--hover);
+			}
+
+			&._ghost {
+				&:not(:hover):not(:focus):not(._hover):not(._focus) {
+					border-color: var(--color-primary);
+					color: var(--color-primary);
+				}
+			}
+
+			&._invert {
+				border-color: var(--color-back);
+				color: var(--color-text--on-primary--invert);
+				background-color: var(--color-back);
+
+				&._ghost {
+					&:not(:hover):not(:focus):not(._hover):not(._focus) {
+						border-color: var(--color-text--on-primary--invert);
+						color: var(--color-text--on-primary--invert);
+					}
+				}
+
+				&:hover,
+				&:focus,
+				&._hover,
+				&._focus {
+					border-color: var(--color-back--hover);
+					background-color: var(--color-back--hover);
+				}
+			}
+		}
+
+		&._theme_secondary {
+			border-color: var(--color-secondary);
+			color: var(--color-text--on-secondary);
+			background-color: var(--color-secondary);
+
+			&:hover,
+			&:focus,
+			&._hover,
+			&._focus {
+				border-color: var(--color-secondary--hover);
+				background-color: var(--color-secondary--hover);
+			}
+
+			&._ghost {
+				&:not(:hover):not(:focus):not(._hover):not(._focus) {
+					border-color: var(--color-secondary);
+					color: var(--color-secondary);
+				}
+			}
+
+			&._invert {
+				border-color: var(--color-back);
+				color: var(--color-text--on-secondary--invert);
+				background-color: var(--color-back);
+
+				&._ghost {
+					&:not(:hover):not(:focus):not(._hover):not(._focus) {
+						border-color: var(--color-text--on-secondary--invert);
+						color: var(--color-text--on-secondary--invert);
+					}
+				}
+
+				&:hover,
+				&:focus,
+				&._hover,
+				&._focus {
+					border-color: var(--color-back--hover);
+					background-color: var(--color-back--hover);
+				}
+			}
 		}
 	}
 </style>
