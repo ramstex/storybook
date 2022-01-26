@@ -41,6 +41,8 @@
 	--color-text--on-secondary: var(--color-basic-back);
 	--color-back: var(--color-basic-back);
 	--color-back--inverse: var(--color-basic-text);
+	--color-back--hover: var(--color-basic-back--light);
+	--color-back--hover--inverse: var(--color-basic-text--light);
 	--color-primary: var(--color-basic-primary);
 	--color-primary--hover: var(--color-basic-primary--light);
 	--color-secondary: var(--color-basic-secondary);

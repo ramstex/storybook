@@ -92,6 +92,10 @@
 			invert: {
 				type: Boolean,
 			},
+
+			full: {
+				type: Boolean,
+			},
 		},
 
 		computed: {
@@ -105,6 +109,7 @@
 					{ '_focus': this.focus },
 					{ '_square': this.square },
 					{ '_invert': this.invert },
+					{ '_full': this.full },
 				];
 			},
 
@@ -116,12 +121,24 @@
 </script>
 
 <style lang="scss">
+	@use 'sass:math';
 	@import '../../../style/globals/src.scss';
 
 	.ui-button {
-		padding: $gutter $gutter;
-		@media (min-width: mediaDesktopSm()) {
+		width: fit-content;
+		//noinspection CssInvalidFunction
+		padding: math.div($gutter, 2) $gutter;
+		border: none;
+		cursor: pointer;
+		-webkit-appearance: none;
+		color: var(--color-text--inverse);
+		//noinspection CssInvalidFunction
+		font-size: math.div($gutter, 2);
+		background-color: var(--color-back--inverse);
+		transition: all $duration ease;
 
+		&:hover {
+			background-color: var(--color-back--hover--inverse);
 		}
 	}
 </style>
