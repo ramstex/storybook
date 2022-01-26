@@ -32,3 +32,39 @@ $breakpoints: (
 	$device: map-get($breakpoints, $device);
 	@return map-get($device, $breakpoint) + $modifier;
 }
+
+@function mediaMobileSm($modifier: 0) {
+	@return mediaBreakpoint('mobile', 'sm', $modifier);
+}
+
+@function mediaMobileMd($modifier: 0) {
+	@return mediaBreakpoint('mobile', 'md', $modifier);
+}
+
+@function mediaMobileLg($modifier: 0) {
+	@return mediaBreakpoint('mobile', 'lg', $modifier);
+}
+
+@function mediaTabletSm($modifier: 0) {
+	@return mediaBreakpoint('tablet', 'sm', $modifier);
+}
+
+@function mediaTabletMd($modifier: 0) {
+	@return mediaBreakpoint('tablet', 'md', $modifier);
+}
+
+@function mediaTabletLg($modifier: 0) {
+	@return mediaBreakpoint('tablet', 'lg', $modifier);
+}
+
+@function mediaDesktopSm($modifier: 0) {
+	@return mediaBreakpoint('desktop', 'sm', $modifier);
+}
+
+@function mediaDesktopMd($modifier: 0) {
+	@return mediaBreakpoint('desktop', 'md', $modifier);
+}
+
+@function mediaDesktopLg($modifier: 0) {
+	@return mediaBreakpoint('desktop', 'lg', $modifier);
+}
