@@ -17,7 +17,7 @@ export default {
 	],
 
 	output: {
-		path: path.resolve(__dirname, 'js'),
+		path: path.resolve(__dirname, '../js'),
 		filename: 'index.js',
 		publicPath: __config[__task].baseUrl,
 	},
@@ -63,7 +63,7 @@ export default {
 					[
 						new HtmlWebpackPlugin( {
 							filename: 'index.html',
-							template: 'index.html',
+							template: 'src/index.html',
 							inject: 'body',
 						} )
 					]
@@ -73,7 +73,7 @@ export default {
 
 		new HtmlWebpackPlugin( {
 			filename: '../main.tpl',
-			template: 'main.html',
+			template: 'src/main.html',
 			inject: 'body',
 		} ),
 	],
