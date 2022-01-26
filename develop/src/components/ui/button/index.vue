@@ -1,6 +1,7 @@
 <template>
 	<BaseLink
 		class="ui-button"
+		:class="rootClass"
 		v-if="isLink"
 		v-bind="$attrs"
 	>
@@ -8,6 +9,7 @@
 	</BaseLink>
 	<button
 		class="ui-button"
+		:class="rootClass"
 		v-else
 	>
 		<slot></slot>
@@ -30,6 +32,13 @@
 		'secondary',
 	];
 	const themeDefault = themes[0];
+
+	const sizes = [
+		'sm',
+		'md',
+		'lg',
+	];
+	const sizeDefault = sizes[1];
 
 	export default {
 		name: 'UiButton',
@@ -55,12 +64,47 @@
 					return themes.indexOf(value) >= 0;
 				},
 			},
+
+			size: {
+				type: String,
+				default: sizeDefault,
+				validator(value) {
+					return sizes.indexOf(value) >= 0;
+				},
+			},
+
+			disabled: {
+				type: Boolean,
+			},
+
+			hover: {
+				type: Boolean,
+			},
+
+			focus: {
+				type: Boolean,
+			},
+
+			square: {
+				type: Boolean,
+			},
+
+			invert: {
+				type: Boolean,
+			},
 		},
 
 		computed: {
 			rootClass() {
 				return [
-					`_template_${this.template}`,
+					{ [`_template_${this.template}`]: this.template !== templateDefault },
+					{ [`_theme_${this.theme}`]: this.theme !== themeDefault },
+					{ [`_size_${this.size}`]: this.size !== sizeDefault },
+					{ '_disabled': this.disabled },
+					{ '_hover': this.hover },
+					{ '_focus': this.focus },
+					{ '_square': this.square },
+					{ '_invert': this.invert },
 				];
 			},
 
