@@ -27,9 +27,7 @@
 
 <script>
 import MarkupContainer from '../../../src/components/markup/container/index.vue';
-import MarkupGrid from '../../../src/components/markup/grid/index.vue';
-import MarkupGridRow from '../../../src/components/markup/grid/row/index.vue';
-import MarkupGridCol from '../../../src/components/markup/grid/col/index.vue';
+import MarkupGrid, { MarkupGridRow, MarkupGridCol } from '../../../src/components/markup/grid/index.vue';
 
 export default {
 	name: 'PageHome',
