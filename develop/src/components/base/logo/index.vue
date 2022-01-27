@@ -3,6 +3,8 @@
 		class="base-logo"
 		v-bind="$attrs"
 		@click="onClick"
+		@mouseenter="onMouseEnter"
+		@mouseleave="onMouseLeave"
 	>
 		<img
 			class="base-logo__image"
@@ -40,8 +42,16 @@
 		},
 
 		methods: {
-			onClick() {
-				this.$emit('click');
+			onClick(event) {
+				this.$emit('click', event);
+			},
+
+			onMouseEnter(event) {
+				this.$emit('mouseenter', event);
+			},
+
+			onMouseLeave(event) {
+				this.$emit('mouseleave', event);
 			},
 		},
 	}

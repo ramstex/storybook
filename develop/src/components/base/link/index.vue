@@ -1,7 +1,31 @@
 <template>
+	<router-link
+		class="base-link"
+		v-if="isInternal"
+		:to="$attrs.to"
+		v-bind="$attrs"
+		@click="onClick"
+		@mouseenter="onMouseEnter"
+		@mouseleave="onMouseLeave"
+	>
+		<slot />
+	</router-link>
+
+	<a
+		class="base-link"
+		v-else-if="isExternal"
+		:href="$attrs.to"
+		target="_blank"
+		@click="onClick"
+		@mouseenter="onMouseEnter"
+		@mouseleave="onMouseLeave"
+	>
+		<slot />
+	</a>
+
 	<component
 		class="base-link"
-		v-if="isLink"
+		v-else
 		:is="tag"
 		@click="onClick"
 		@mouseenter="onMouseEnter"
@@ -9,32 +33,6 @@
 	>
 		<slot />
 	</component>
-	<template
-		v-else
-	>
-		<router-link
-			class="base-link"
-			v-if="isInternal"
-			:to="$attrs.to"
-			v-bind="$attrs"
-			@click="onClick"
-			@mouseenter="onMouseEnter"
-			@mouseleave="onMouseLeave"
-		>
-			<slot />
-		</router-link>
-		<a
-			class="base-link"
-			v-else
-			:href="$attrs.to"
-			target="_blank"
-			@click="onClick"
-			@mouseenter="onMouseEnter"
-			@mouseleave="onMouseLeave"
-		>
-			<slot />
-		</a>
-	</template>
 </template>
 
 <script>
@@ -57,7 +55,11 @@ export default {
 		},
 
 		isInternal() {
-			return !isAbsoluteUrl(this.$attrs.to);
+			return this.isLink && !isAbsoluteUrl(this.$attrs.to);
+		},
+
+		isExternal() {
+			return this.isLink && isAbsoluteUrl(this.$attrs.to);
 		},
 	},
 
@@ -78,7 +80,7 @@ export default {
 </script>
 
 <style lang="scss">
-.base-link {
+	.base-link {
 
-}
+	}
 </style>
