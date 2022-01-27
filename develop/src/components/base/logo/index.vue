@@ -15,6 +15,7 @@
 
 <script>
 	import BaseLink from '../link/index.vue';
+
 	export default {
 		name: 'BaseLogo',
 		inheritAttrs: false,
