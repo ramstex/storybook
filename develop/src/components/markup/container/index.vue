@@ -8,51 +8,64 @@
 </template>
 
 <script>
-export default {
-	name: 'MarkupContainer',
+	export default {
+		name: 'MarkupContainer',
 
-	props: {
-		wide: {
-			type: Boolean,
+		props: {
+			wide: {
+				type: Boolean,
+			},
+
+			tight: {
+				type: Boolean,
+			},
 		},
 
-		tight: {
-			type: Boolean,
+		computed: {
+			rootClass() {
+				return [
+					{ '_wide': this.wide },
+					{ '_tight': this.tight },
+				];
+			}
 		},
-	},
-
-	computed: {
-		rootClass() {
-			return [
-				{ '_wide': this.wide },
-				{ '_tight': this.tight },
-			];
-		}
-	},
-}
+	}
 </script>
 
 <style lang="scss">
-@import "./src/style/globals/src.scss";
+	@import "./src/style/globals/src.scss";
 
-.markup-container {
-	width: 100%;
-	padding-left: 30px;
-	padding-right: 30px;
-	margin-left: auto;
-	margin-right: auto;
+	.markup-container {
+		width: 100%;
+		padding-left: vRel();
+		padding-right: vRel();
+		margin-left: auto;
+		margin-right: auto;
 
-	@media (min-width: mediaBreakpoint($device: 'desktop')) {
-		max-width: 1000px;
+		@media (min-width: mediaTabletSm()) {
+			padding-left: $gutter;
+			padding-right: $gutter;
+		}
+
+		@media (min-width: mediaDesktopSm()) {
+			max-width: 1000px;
+		}
+
+		@media (min-width: mediaDesktopMd()) {
+			max-width: 1200px;
+		}
+
+		@media (min-width: mediaDesktopLg()) {
+			max-width: 1400px;
+		}
+
+		&._wide {
+			max-width: none;
+		}
+
+		&._tight {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
-
-	&._wide {
-		max-width: none;
-	}
-
-	&._tight {
-		padding-left: 0;
-		padding-right: 0;
-	}
-}
 </style>
