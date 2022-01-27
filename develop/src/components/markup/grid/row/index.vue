@@ -20,7 +20,6 @@
 		'start',
 		'end',
 		'center',
-		'stretch',
 	];
 	const alignHDefault = alignHValues[0];
 
@@ -93,10 +92,6 @@
 
 		&._align-h_center {
 			justify-content: center;
-		}
-
-		&._align-h_stretch {
-			justify-content: stretch;
 		}
 
 		&._align-v_start {

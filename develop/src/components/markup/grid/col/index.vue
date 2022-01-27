@@ -8,7 +8,16 @@
 </template>
 
 <script>
-	const colValues = [ 'auto', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ];
+	const cols = 12;
+	let colsIndexes = [];
+	for (let i = 1; i <= cols; i++) {
+		colsIndexes.push(i);
+		colsIndexes.push(i.toString());
+	}
+	const colValues = [
+		'auto',
+		...colsIndexes
+	];
 
 	const alignVValues = [
 		'start',
@@ -57,7 +66,7 @@
 		computed: {
 			rootClass() {
 				return [
-					`_col_${this.col}`,
+					{ [`_col_${this.col}`]: !!this.col },
 					{ [`_align-h_${this.alignH}`]: this.alignH !== alignHDefault },
 					{ [`_align-v_${this.alignV}`]: this.alignV !== alignVDefault },
 				]
@@ -69,6 +78,8 @@
 <style lang="scss">
 	@use 'sass:math';
 	@import '../../../../style/globals/src.scss';
+
+	$cols: 12;
 
 	.markup-grid-col {
 		padding-left: math.div($gutter, 2);
@@ -104,6 +115,16 @@
 
 		&._align-v_stretch {
 			align-self: stretch;
+		}
+
+		&._col_auto {
+			width: 100%;
+		}
+
+		@for $i from 1 through $cols {
+			&._col_#{$i} {
+				width: math.div($i, $cols) * 100%;
+			}
 		}
 	}
 </style>

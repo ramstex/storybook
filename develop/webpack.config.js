@@ -40,14 +40,7 @@ export default {
 				use: [
 					'vue-style-loader',
 					'css-loader',
-					{
-						loader: 'sass-loader',
-						options: {
-							additionalData: `
-								@import "./src/style/globals/src.scss";
-							`,
-						},
-					},
+					'sass-loader',
 				],
 			},
 		],
