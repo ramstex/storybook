@@ -41,7 +41,7 @@
 		methods: {
 			onClick() {
 				this.$emit('click');
-			},onClick
+			},
 		},
 	}
 </script>
