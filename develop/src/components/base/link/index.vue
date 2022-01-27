@@ -3,6 +3,9 @@
 		class="base-link"
 		v-if="isLink"
 		:is="tag"
+		@click="onClick"
+		@mouseenter="onMouseEnter"
+		@mouseleave="onMouseLeave"
 	>
 		<slot />
 	</component>
