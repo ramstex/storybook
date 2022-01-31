@@ -5,7 +5,9 @@
 			<MarkupGrid>
 				<MarkupGridRow>
 					<MarkupGridCol>
-						<h3>aaaaaaaaaaa</h3>
+						<UiInput>
+							Инпут
+						</UiInput>
 					</MarkupGridCol>
 					<MarkupGridCol col="4">
 						<h3>eeeeeeeeeee</h3>
@@ -28,6 +30,7 @@
 <script>
 import MarkupContainer from '../../../src/components/markup/container/index.vue';
 import MarkupGrid, { MarkupGridRow, MarkupGridCol } from '../../../src/components/markup/grid/index.vue';
+import UiInput from '../../../src/components/ui/input/index.vue';
 
 export default {
 	name: 'PageHome',
@@ -37,6 +40,7 @@ export default {
 		MarkupGrid,
 		MarkupGridRow,
 		MarkupGridCol,
+		UiInput,
 	},
 
 	methods: {
