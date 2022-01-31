@@ -9,9 +9,16 @@
 
 		<input
 			class="ui-input__input"
+			ref="input"
 			v-model="inputValue"
 			:type="type"
 			v-bind="$attrs"
+			@focus="onFocus"
+			@blur="onBlur"
+			@input="onInput"
+			@change="onChange"
+			@mouseenter="onMouseEnter"
+			@mouseLeave="onMouseLeave"
 		>
 	</div>
 </template>
@@ -54,6 +61,8 @@
 		data() {
 			return {
 				inputValue: this.value,
+				focused: false,
+				hovered: false,
 			};
 		},
 
@@ -74,10 +83,56 @@
 			inputValue(value) {
 				this.$emit('change', value);
 			},
+
+			disabled(value) {
+				if (value) {
+					this.$emit('disable');
+				} else {
+					this.$emit('enable');
+				}
+			},
+
+			focused(value) {
+				if (value) {
+					this.$emit('focus');
+				} else {
+					this.$emit('blur');
+				}
+			},
+
+			hovered(value) {
+				if (value) {
+					this.$emit('mouseenter');
+				} else {
+					this.$emit('mouseleave');
+				}
+			},
 		},
 
 		methods: {
+			onInput() {
+				this.$emit('input', this.inputValue);
+			},
 
+			onChange() {
+				this.$emit('change', this.inputValue);
+			},
+
+			onFocus() {
+				this.focused = true;
+			},
+
+			onBlur() {
+				this.focused = false;
+			},
+
+			onMouseEnter() {
+				this.hovered = true;
+			},
+
+			onMouseLeave() {
+				this.hovered = false;
+			},
 		},
 	}
 </script>
