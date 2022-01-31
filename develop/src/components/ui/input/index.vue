@@ -18,7 +18,7 @@
 			@input="onInput"
 			@change="onChange"
 			@mouseenter="onMouseEnter"
-			@mouseLeave="onMouseLeave"
+			@mouseleave="onMouseLeave"
 		>
 	</div>
 </template>
