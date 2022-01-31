@@ -1,3 +1,4 @@
+import webpack from 'webpack';
 import { fileURLToPath } from 'url';
 import path, { dirname }  from 'path';
 import { VueLoaderPlugin } from 'vue-loader';
@@ -47,6 +48,11 @@ export default {
 	},
 
 	plugins: [
+		new webpack.DefinePlugin({
+			__VUE_OPTIONS_API__: true,
+			__VUE_PROD_DEVTOOLS__: true,
+		}),
+
 		new VueLoaderPlugin(),
 
 		//  Генерация index.html требуется только при разработке.

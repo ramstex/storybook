@@ -4,18 +4,27 @@
 			<h2 class="page-home__title">Home page</h2>
 			<button @click="onAlertClick">alert</button>
 			<button @click="onContactsClick">storybook</button>
+			<UiInput>имя</UiInput>
 		</MarkupContainer>
 	</div>
 </template>
 
 <script>
 import MarkupContainer from '../../../src/components/markup/container/index.vue';
+import UiInput from '../../../src/components/ui/input/index.vue';
 
 export default {
 	name: 'PageHome',
 
+	data() {
+		return {
+			name: '',
+		};
+	},
+
 	components: {
 		MarkupContainer,
+		UiInput,
 	},
 
 	methods: {

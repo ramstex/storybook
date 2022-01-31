@@ -1,11 +1,14 @@
-import Vue from 'vue';
-import App from './App.vue';
-import Router from './plugins/router.js';
+import { createApp, h } from 'vue';
+import AppTemplate from './App.vue';
+import Router from '../router.config.js';
 import './style/index.scss';
 
-new Vue({
-	el: '#app',
-	router: Router,
-
-	render: h => h(App),
+const MyApp = createApp({
+	render() {
+		return h(AppTemplate);
+	},
 });
+
+console.log(MyApp);
+MyApp.use(Router);
+MyApp.mount('#app');

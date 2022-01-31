@@ -1,8 +1,10 @@
+import { createRouter, createWebHistory } from 'vue-router';
+
 import PageHome from './src/pages/home/index.vue';
 import PageStorybook from './src/pages/storybook/index.vue';
 
-export default {
-	mode: 'history',
+const Router =  createRouter({
+	history: createWebHistory(),
 
 	routes: [
 		{
@@ -17,4 +19,6 @@ export default {
 			component: PageStorybook,
 		},
 	],
-}
+});
+
+export default Router;
