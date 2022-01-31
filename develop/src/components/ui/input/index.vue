@@ -36,8 +36,18 @@
 		name: 'UiInput',
 		inheritAttrs: false,
 
+		emits: [
+			'update:modelValue',
+			'input',
+			'change',
+			'focus',
+			'blur',
+			'mouseenter',
+			'mouseleave',
+		],
+
 		props: {
-			value: {
+			modelValue: {
 				type: [String, Number],
 			},
 
@@ -76,12 +86,12 @@
 		},
 
 		watch: {
-			value(value) {
+			modelValue(value) {
 				this.inputValue = value;
 			},
 
 			inputValue(value) {
-				this.$emit('change', value);
+				this.$emit('update:modelValue', value);
 			},
 
 			disabled(value) {
@@ -112,10 +122,12 @@
 		methods: {
 			onInput() {
 				this.$emit('input', this.inputValue);
+				this.$emit('update:modelValue', this.inputValue);
 			},
 
 			onChange() {
 				this.$emit('change', this.inputValue);
+				this.$emit('update:modelValue', this.inputValue);
 			},
 
 			onFocus() {
