@@ -189,8 +189,11 @@
 	@import './src/style/globals/src.scss';
 
 	.ui-input {
+		width: 100%;
+
 		&__input {
 			display: block;
+			width: 100%;
 			padding: math.div($gutter, 2) $gutter*0.75;
 			border-radius: 0;
 			border: 1px solid var(--color-back--inverse);
