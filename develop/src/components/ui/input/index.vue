@@ -7,8 +7,21 @@
 			<slot />
 		</span>
 
+		<textarea
+			class="ui-input__input"
+			v-if="textarea"
+			ref="input"
+			@focus="onFocus"
+			@blur="onBlur"
+			@input="onInput"
+			@change="onChange"
+			@mouseenter="onMouseEnter"
+			@mouseleave="onMouseLeave"
+		/>
+
 		<input
 			class="ui-input__input"
+			v-else
 			ref="input"
 			v-model="inputValue"
 			:type="type"
@@ -19,11 +32,13 @@
 			@change="onChange"
 			@mouseenter="onMouseEnter"
 			@mouseleave="onMouseLeave"
-		>
+		/>
 	</div>
 </template>
 
 <script>
+	import { ref, watch } from 'vue';
+
 	const availableTypes = [
 		'text',
 		'email',
@@ -59,6 +74,14 @@
 				},
 			},
 
+			placeholder: {
+				type: String,
+			},
+
+			textarea: {
+				type: Boolean,
+			},
+
 			float: {
 				type: Boolean,
 			},
@@ -66,13 +89,25 @@
 			disabled: {
 				type: Boolean,
 			},
+
+			required: {
+				type: Boolean,
+			},
 		},
 
-		data() {
+		setup(props) {
+			const inputValue = ref(props.modelValue);
+			watch(() => props.modelValue, (value) => {
+				inputValue.value = value;
+			});
+
+			const focused = ref(false);
+			const hovered = ref(false);
+
 			return {
-				inputValue: this.value,
-				focused: false,
-				hovered: false,
+				inputValue,
+				focused,
+				hovered,
 			};
 		},
 
@@ -80,16 +115,16 @@
 			rootClass() {
 				return [
 					{ '_float': this.float },
+					{ '_textarea': this.textarea },
 					{ '_disabled': this.disabled },
+					{ '_required': this.required },
+					{ '_focused': this.focused },
+					{ '_hovered': this.hovered },
 				]
 			},
 		},
 
 		watch: {
-			modelValue(value) {
-				this.inputValue = value;
-			},
-
 			inputValue(value) {
 				this.$emit('update:modelValue', value);
 			},
