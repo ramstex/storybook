@@ -11,6 +11,7 @@
 			class="ui-input__input"
 			v-if="textarea"
 			ref="input"
+			v-bind="$attrs"
 			:placeholder="placeholder"
 			:required="required"
 			@focus="onFocus"
@@ -25,9 +26,9 @@
 			class="ui-input__input"
 			v-else
 			ref="input"
+			v-bind="$attrs"
 			v-model="inputValue"
 			:type="type"
-			v-bind="$attrs"
 			:placeholder="placeholder"
 			:required="required"
 			@focus="onFocus"
@@ -64,6 +65,7 @@
 			'blur',
 			'mouseenter',
 			'mouseleave',
+			'invalid',
 		],
 
 		props: {
@@ -100,14 +102,39 @@
 			},
 		},
 
-		setup(props) {
+		setup(props, {emit}) {
+			//	Значение инпута
 			const inputValue = ref(props.modelValue);
+
 			watch(() => props.modelValue, (value) => {
 				inputValue.value = value;
 			});
 
+			watch(inputValue, (value) => {
+				emit('update:modelValue', value);
+			});
+
+			//	Фокус
 			const focused = ref(false);
+
+			watch(focused, (value) => {
+				if (value) {
+					emit('focus');
+				} else {
+					emit('blur');
+				}
+			});
+
+			//	Ховер
 			const hovered = ref(false);
+
+			watch(hovered, (value) => {
+				if (value) {
+					emit('mouseenter');
+				} else {
+					emit('mouseleave');
+				}
+			});
 
 			return {
 				inputValue,
@@ -130,31 +157,11 @@
 		},
 
 		watch: {
-			inputValue(value) {
-				this.$emit('update:modelValue', value);
-			},
-
 			disabled(value) {
 				if (value) {
 					this.$emit('disable');
 				} else {
 					this.$emit('enable');
-				}
-			},
-
-			focused(value) {
-				if (value) {
-					this.$emit('focus');
-				} else {
-					this.$emit('blur');
-				}
-			},
-
-			hovered(value) {
-				if (value) {
-					this.$emit('mouseenter');
-				} else {
-					this.$emit('mouseleave');
 				}
 			},
 		},
@@ -187,7 +194,10 @@
 			},
 
 			onInvalid(event) {
-				this.$emit('invalid', event);
+				this.$emit('invalid', {
+					event,
+					input: this,
+				});
 			},
 		},
 	}
