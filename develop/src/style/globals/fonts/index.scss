@@ -1,0 +1,19 @@
+@import 'src.scss';
+
+@font-face {
+	font-family: Montserrat;
+	src: url($font_dir + 'Montserrat-Regular.eot'),
+	url($font_dir + 'Montserrat-Regular.ttf'),
+	url($font_dir + 'Montserrat-Regular.woff'),
+	url($font_dir + 'Montserrat-Regular.woff2');
+}
+
+@font-face {
+	font-family: Montserrat;
+	src: url($font_dir + 'Montserrat-Bold.eot'),
+	url($font_dir + 'Montserrat-Bold.ttf'),
+	url($font_dir + 'Montserrat-Bold.svg'),
+	url($font_dir + 'Montserrat-Bold.woff'),
+	url($font_dir + 'Montserrat-Bold.woff2');
+	font-weight: bold;
+}

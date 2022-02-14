@@ -1,23 +1,5 @@
 @import 'src.scss';
 
-@font-face {
-	font-family: Montserrat;
-	src: url('../../../fonts/Montserrat-Regular.eot'),
-	url('../../../fonts/Montserrat-Regular.ttf'),
-	url('../../../fonts/Montserrat-Regular.woff'),
-	url('../../../fonts/Montserrat-Regular.woff2');
-}
-
-@font-face {
-	font-family: Montserrat;
-	src: url('../../../fonts/Montserrat-Bold.eot'),
-	url('../../../fonts/Montserrat-Bold.ttf'),
-	url('../../../fonts/Montserrat-Bold.svg'),
-	url('../../../fonts/Montserrat-Bold.woff'),
-	url('../../../fonts/Montserrat-Bold.woff2');
-	font-weight: bold;
-}
-
 //	Дефолтные стили
 h1,
 .h1 {

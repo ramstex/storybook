@@ -1,10 +1,3 @@
-$family_primary: Montserrat, Arial, sans-serif;
-
-//	Миксин шрифта
-@mixin family_primary {
-	font-family: $family_primary;
-}
-
 //	Миксин для заголовка 1-ого уровня
 @mixin text_h1 {
 	font-weight: 600;
