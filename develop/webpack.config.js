@@ -36,6 +36,7 @@ export default {
 				test: /\.vue$/,
 				use: 'vue-loader',
 			},
+
 			{
 				test: /\.s[ac]ss$/,
 				use: [

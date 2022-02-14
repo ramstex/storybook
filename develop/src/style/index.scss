@@ -7,3 +7,7 @@
 }
 
 @import 'globals/index.scss';
+
+body {
+	font-family: var(--family-primary);
+}
