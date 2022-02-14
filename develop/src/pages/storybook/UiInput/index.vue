@@ -4,11 +4,13 @@
 			<StorybookHeader
 				title="Input"
 			/>
+
 			<MarkupGrid>
 				<MarkupGridRow>
 					<MarkupGridCol col="2">
 						<p>Обычный инрут</p>
 					</MarkupGridCol>
+
 					<MarkupGridCol col="4">
 						<UiInput>Название инпута</UiInput>
 					</MarkupGridCol>

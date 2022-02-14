@@ -9,6 +9,5 @@ const MyApp = createApp({
 	},
 });
 
-console.log(MyApp);
 MyApp.use(Router);
 MyApp.mount('#app');

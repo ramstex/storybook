@@ -11,6 +11,8 @@
 			class="ui-input__input"
 			v-if="textarea"
 			ref="input"
+			:placeholder="placeholder"
+			:required="required"
 			@focus="onFocus"
 			@blur="onBlur"
 			@input="onInput"
@@ -26,12 +28,15 @@
 			v-model="inputValue"
 			:type="type"
 			v-bind="$attrs"
+			:placeholder="placeholder"
+			:required="required"
 			@focus="onFocus"
 			@blur="onBlur"
 			@input="onInput"
 			@change="onChange"
 			@mouseenter="onMouseEnter"
 			@mouseleave="onMouseLeave"
+			@invalid="onInvalid"
 		/>
 	</div>
 </template>
@@ -179,6 +184,10 @@
 
 			onMouseLeave() {
 				this.hovered = false;
+			},
+
+			onInvalid(event) {
+				this.$emit('invalid', event);
 			},
 		},
 	}
