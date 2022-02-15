@@ -1,7 +1,7 @@
 import { createApp, h } from 'vue';
-import AppTemplate from './App.vue';
-import Router from '../router.config.js';
-import './style/index.scss';
+import AppTemplate from '/src/App.vue';
+import Router from '/config/router.config.js';
+import '/src/style/index.scss';
 
 const MyApp = createApp({
 	render() {

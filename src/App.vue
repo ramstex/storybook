@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import Layout from './layouts/index.vue';
-import BaseLink	from './components/base/link/index.vue';
-import MarkupContainer from './components/markup/container/index.vue';
-import BlockHeader from './components/block/header/index.vue';
+import Layout from '/src/layouts/index.vue';
+import BaseLink	from '/src/components/base/link/index.vue';
+import MarkupContainer from '/src/components/markup/container/index.vue';
+import BlockHeader from '/src/components/block/header/index.vue';
 
 export default {
 	name: 'App',
@@ -34,6 +34,7 @@ export default {
 <style lang="scss">
 .app {
 	width: 100%;
+
 	&__container {
 		width: 100%;
 	}

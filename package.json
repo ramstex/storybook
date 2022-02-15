@@ -8,8 +8,10 @@
 		"url": "git+ssh://git@github.com/ramstex/storybook.git"
 	},
 	"scripts": {
-		"build": "webpack --config webpack.config.js",
-		"dev": "webpack-dev-server --config webpack.config.js"
+		"dev": "cross-env webpack-dev-server --mode development",
+		"build": "npm run build:dev",
+		"build:dev": "cross-env webpack --mode development",
+		"build:prod": "cross-env webpack --mode production"
 	},
 	"author": "Roman Polunin",
 	"license": "ISC",
@@ -24,6 +26,7 @@
 		"vue-router": "^4.0.12"
 	},
 	"devDependencies": {
+		"cross-env": "^7.0.3",
 		"css-loader": "^6.5.1",
 		"html-loader": "^3.1.0",
 		"html-webpack-plugin": "^5.5.0",
