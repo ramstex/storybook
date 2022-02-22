@@ -1,38 +1,61 @@
+@use 'sass:math';
+
 @import 'src.scss';
 
 //	Дефолтные стили
 h1,
 .h1 {
 	@include text_h1;
+	margin-bottom: $gutter;
 }
 
 h2,
 .h2 {
 	@include text_h2;
+	margin-bottom: $gutter*0.75;
 }
 
 h3,
 .h3 {
 	@include text_h3;
+	margin-bottom: $gutter*0.75;
 }
 
 h4,
 .h4 {
 	@include text_h4;
+	margin-bottom: math.div($gutter, 2);
 }
 
 h5,
 .h5 {
 	@include text_h5;
+	margin-bottom: math.div($gutter, 2);
 }
 
 h6,
 .h6 {
 	@include text_h6;
+	margin-bottom: math.div($gutter, 2);
 }
 
-p {
-	font-size: 16px;
+p,
+.p {
+	@include text_p;
+
+	& + & {
+		margin-top: math.div($gutter, 2);
+	}
+
+	&._subtext,
+	& ._subtext {
+		@include text_subtext;
+	}
+
+	&._footnote,
+	& ._footnote {
+		@include text_footnote;
+	}
 }
 
 a {
@@ -40,9 +63,31 @@ a {
 }
 
 //	Модификаторы
-p._text-footnote,
-.p._text-footnote {
-	font-size: 12px;
+h1._no-margin,
+.h1._no-margin,
+h2._no-margin,
+.h2._no-margin,
+h3._no-margin,
+.h3._no-margin,
+h4._no-margin,
+.h4._no-margin,
+h5._no-margin,
+.h5._no-margin,
+h6._no-margin,
+.h6._no-margin {
+	margin-bottom: 0;
+}
+
+p._no-margin,
+.p._no-margin {
+	margin-top: 0;
+}
+
+._text-uppercase {
+	text-transform: uppercase;
+}
+._text-lowercase {
+	text-transform: lowercase;
 }
 
 :root {

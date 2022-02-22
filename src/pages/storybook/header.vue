@@ -8,6 +8,9 @@
 		<MarkupGrid class="storybook-header__nav">
 			<MarkupGridRow>
 				<MarkupGridCol>
+					<BaseLink :to="{ name: 'storybook-text' }">Text</BaseLink>
+				</MarkupGridCol>
+				<MarkupGridCol>
 					<BaseLink :to="{ name: 'storybook-input' }">Input</BaseLink>
 				</MarkupGridCol>
 			</MarkupGridRow>

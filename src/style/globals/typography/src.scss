@@ -36,7 +36,6 @@
 	font-size: 16px;
 	line-height: 105%;
 	letter-spacing: -0.02em;
-	text-transform: uppercase;
 }
 
 //	Миксин для заголовка 6-ого уровня
@@ -50,4 +49,14 @@
 //	Миксин для параграфа
 @mixin text_p {
 	font-size: 16px;
+}
+
+//	Миксин для мелкого текста
+@mixin text_subtext {
+	font-size: 14px;
+}
+
+//	Миксин для сноски
+@mixin text_footnote {
+	font-size: 12px;
 }

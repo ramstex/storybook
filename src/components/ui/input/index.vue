@@ -3,7 +3,7 @@
 		class="ui-input"
 		:class="rootClass"
 	>
-		<span class="ui-input__caption">
+		<span v-if="!!$slots.default" class="ui-input__caption">
 			<slot />
 		</span>
 
@@ -39,6 +39,10 @@
 			@mouseleave="onMouseLeave"
 			@invalid="onInvalid"
 		/>
+
+		<span v-if="!!$slots.help" class="ui-input__help">
+			<slot name="help" />
+		</span>
 	</div>
 </template>
 
@@ -100,6 +104,10 @@
 			required: {
 				type: Boolean,
 			},
+
+			invalid: {
+				type: Boolean,
+			},
 		},
 
 		setup(props, {emit}) {
@@ -152,6 +160,7 @@
 					{ '_required': this.required },
 					{ '_focused': this.focused },
 					{ '_hovered': this.hovered },
+					{ '_invalid': this.invalid },
 				]
 			},
 		},
@@ -226,6 +235,14 @@
 		&__caption {
 			display: block;
 			margin-bottom: math.div($gutter, 6);
+		}
+
+		&__help {
+
+		}
+
+		&._invalid &__input {
+			border-color: var(--color-basic-danger);
 		}
 	}
 </style>

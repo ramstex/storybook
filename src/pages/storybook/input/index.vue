@@ -8,16 +8,16 @@
 			<form action="">
 			<MarkupGrid>
 				<MarkupGridRow>
-					<MarkupGridCol col="2" align-v="center">
-						<h5>Обычный инрут</h5>
+					<MarkupGridCol col="4">
+						<UiInput
+							v-model="v$.firstName.$model"
+							required
+							:invalid="v$.firstName.$error"
+						>Имя</UiInput>
 					</MarkupGridCol>
 
 					<MarkupGridCol col="4">
-						<UiInput v-model="v1">Название инпута</UiInput>
-					</MarkupGridCol>
-
-					<MarkupGridCol col="4">
-						<p>{{ v1 }}</p>
+						<p>{{ state.firstName }}</p>
 					</MarkupGridCol>
 				</MarkupGridRow>
 
@@ -63,7 +63,7 @@
 					<MarkupGridCol col="2"></MarkupGridCol>
 
 					<MarkupGridCol col="4">
-						<UiInput v-model="vConf" type="password" pattern="vPass" required
+						<UiInput v-model="vConf" type="password" :pattern="vPass" required
 								 @invalid="onInvalid">Подтвердите
 						</UiInput>
 					</MarkupGridCol>
@@ -80,7 +80,9 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
+import useVuelidate from '@vuelidate/core'
+import { required, email } from '@vuelidate/validators'
 
 import StorybookHeader from '../header.vue';
 import MarkupContainer from '../../../components/markup/container/index.vue';
@@ -99,8 +101,7 @@ export default {
 		UiInput,
 	},
 
-	setup() {
-		const v1 = ref('');
+	setup(props, { emit }) {
 		const v2 = ref('qwe@qwe.qwe');
 		const v3 = ref(123);
 		const vPass = ref('');
@@ -109,13 +110,23 @@ export default {
 
 		};
 
+		const state = reactive({
+			firstName: '',
+		})
+		const rules = {
+			firstName: { required, $autoDirty: true },
+		}
+		const v$ = useVuelidate(rules, state);
+
 		return {
-			v1,
 			v2,
 			v3,
 			vPass,
 			vConf,
 			onInvalid,
+
+			state,
+			v$,
 		}
 	},
 }
