@@ -1,14 +1,9 @@
 import webpack from 'webpack';
-import { fileURLToPath } from 'url';
-import path, { dirname }  from 'path';
+import path   from 'path';
 import { VueLoaderPlugin } from 'vue-loader';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 import __config from './config/app.config.js';
-
-const __task = process.env.npm_lifecycle_event;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 export default (env, argv) => {
 	return {
@@ -19,7 +14,7 @@ export default (env, argv) => {
 		],
 
 		output: {
-			path: path.resolve(__dirname, '../js'),
+			path: path.join(process.cwd(), '../js'),
 			filename: 'index.js',
 			publicPath: __config.mode[argv.mode].baseUrl,
 		},
@@ -64,7 +59,7 @@ export default (env, argv) => {
 			new VueLoaderPlugin(),
 
 			//  Генерация index.html требуется только при разработке. Для билда этот файл не нужен.
-			...( __task === 'dev'
+			...( argv.mode === 'development'
 					?
 						[
 							new HtmlWebpackPlugin( {

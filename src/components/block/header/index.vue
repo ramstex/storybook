@@ -12,9 +12,9 @@ export default {
 
 <style lang="scss">
 @use "sass:math";
-@import "./src/style/globals/src.scss";
+@import "../../../style/modules/src.scss";
 
 .block-header {
-	padding: math.div($gutter, 2) 0;
+	padding: 16px 0;
 }
 </style>

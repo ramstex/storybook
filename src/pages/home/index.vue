@@ -40,11 +40,11 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../style/globals/src";
-
-.page-home {
-	&__title {
-		@include text_h1;
-	}
-}
+//@import "../../style/modules/src";
+//
+//.page-home {
+//	&__title {
+//		@include text_h1;
+//	}
+//}
 </style>

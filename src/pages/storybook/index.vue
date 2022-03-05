@@ -21,11 +21,11 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../style/globals/src.scss';
+@import '../../style/modules/src.scss';
 
 .page-storybook {
 	&__nav {
-		margin-top: $gutter;
+		margin-top: 32px;
 	}
 }
 </style>

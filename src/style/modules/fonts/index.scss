@@ -1,0 +1,21 @@
+@use "sass:map";
+@use 'data.scss' as fonts;
+
+@each $i, $family in fonts.$families {
+	@each $j, $style in map.get($family, 'styles') {
+		@font-face {
+			font-family: map.get($family, 'family');
+
+			$formats: fonts.$formats;
+
+			@if index($style, 'formats') != null {
+				$formats: map.get($style, 'formats');
+			}
+
+			@each $format in $formats {
+				$src: fonts.$dir + map.get($style, 'filename') + '.' + $format;
+				src: url($src);
+			}
+		}
+	}
+}

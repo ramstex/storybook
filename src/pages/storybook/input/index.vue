@@ -133,12 +133,12 @@ export default {
 </script>
 
 <style lang="scss">
-@import './src/style/globals/src.scss';
+@import '../../../style/modules/src.scss';
 
 .page-storybook-input {
 	.markup-grid-row {
 		&:not(:last-child) {
-			margin-bottom: $gutter;
+			margin-bottom: 32px;
 		}
 	}
 }

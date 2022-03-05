@@ -1,0 +1,6 @@
+@use 'data.scss' as fonts;
+
+:root {
+	--family-primary: #{fonts.getFamily('primary')};
+	--family-secondary: #{fonts.getFamily('secondary')};
+}

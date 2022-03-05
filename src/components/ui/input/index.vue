@@ -214,7 +214,7 @@
 
 <style lang="scss">
 	@use 'sass:math';
-	@import './src/style/globals/src.scss';
+	@import '../../../style/modules/src.scss';
 
 	.ui-input {
 		width: 100%;
@@ -222,7 +222,7 @@
 		&__input {
 			display: block;
 			width: 100%;
-			padding: math.div($gutter, 2) $gutter*0.75;
+			padding: math.div(32px, 2) 32px*0.75;
 			border-radius: 0;
 			border: 1px solid var(--color-back--inverse);
 			-webkit-appearance: none;
@@ -234,7 +234,7 @@
 
 		&__caption {
 			display: block;
-			margin-bottom: math.div($gutter, 6);
+			margin-bottom: math.div(32px, 6);
 		}
 
 		&__help {

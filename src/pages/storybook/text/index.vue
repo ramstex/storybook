@@ -82,7 +82,7 @@ import MarkupContainer from '../../../components/markup/container/index.vue';
 import MarkupGrid, { MarkupGridRow, MarkupGridCol } from '../../../components/markup/grid/index.vue';
 
 export default {
-	name: 'PageStorybookInput',
+	name: 'PageStorybookText',
 
 	components: {
 		StorybookHeader,
@@ -98,16 +98,16 @@ export default {
 <style lang="scss">
 @use 'sass:math';
 
-@import './src/style/globals/src.scss';
+@import '../../../style/modules/src.scss';
 
 .page-storybook-text {
 	.markup-grid-row {
-		padding-top: math.div($gutter, 2);
-		padding-bottom: math.div($gutter, 2);
+		padding-top: math.div(32px, 2);
+		padding-bottom: math.div(32px, 2);
 
 		&:nth-child(even) {
-			margin-top: math.div($gutter, 2);
-			margin-bottom: math.div($gutter, 2);
+			margin-top: math.div(32px, 2);
+			margin-bottom: math.div(32px, 2);
 			background-color: var(--color-basic-muted--light);
 		}
 	}

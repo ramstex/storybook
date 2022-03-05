@@ -1,4 +1,5 @@
-@import 'globals/src.scss';
+@import 'modules/colors/vars.scss';
+@import 'modules/fonts/vars.scss';
 
 * {
 	margin: 0;
@@ -6,8 +7,9 @@
 	box-sizing: border-box;
 }
 
-@import 'globals/index.scss';
-
 body {
-	font-family: var(--family-primary);
+	//font-family: var(--family-primary);
 }
+
+@import 'modules/colors/index.scss';
+@import 'modules/fonts/index.scss';

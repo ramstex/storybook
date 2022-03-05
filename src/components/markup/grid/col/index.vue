@@ -77,13 +77,13 @@
 
 <style lang="scss">
 	@use 'sass:math';
-	@import '../../../../style/globals/src.scss';
+	@import '../../../../style/modules/src.scss';
 
 	$cols: 12;
 
 	.markup-grid-col {
-		padding-left: math.div($gutter, 2);
-		padding-right: math.div($gutter, 2);
+		padding-left: math.div(32px, 2);
+		padding-right: math.div(32px, 2);
 
 		&._align-h_start {
 			justify-self: flex-start;
@@ -123,6 +123,7 @@
 
 		@for $i from 1 through $cols {
 			&._col_#{$i} {
+				flex-shrink: 0;
 				width: math.div($i, $cols) * 100%;
 			}
 		}

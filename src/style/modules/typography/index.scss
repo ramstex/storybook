@@ -1,60 +1,59 @@
 @use 'sass:math';
-
-@import 'src.scss';
+@use 'data.scss' as text;
 
 //	Дефолтные стили
 h1,
 .h1 {
-	@include text_h1;
-	margin-bottom: $gutter;
+	@include text.h1;
+	margin-bottom: 32px;
 }
 
 h2,
 .h2 {
-	@include text_h2;
-	margin-bottom: $gutter*0.75;
+	@include text.h2;
+	margin-bottom: 24px;
 }
 
 h3,
 .h3 {
-	@include text_h3;
-	margin-bottom: $gutter*0.75;
+	@include text.h3;
+	margin-bottom: 24px;
 }
 
 h4,
 .h4 {
-	@include text_h4;
-	margin-bottom: math.div($gutter, 2);
+	@include text.h4;
+	margin-bottom: 16px;
 }
 
 h5,
 .h5 {
-	@include text_h5;
-	margin-bottom: math.div($gutter, 2);
+	@include text.h5;
+	margin-bottom: 16px;
 }
 
 h6,
 .h6 {
-	@include text_h6;
-	margin-bottom: math.div($gutter, 2);
+	@include text.h6;
+	margin-bottom: 16px;
 }
 
 p,
 .p {
-	@include text_p;
+	@include text.p;
 
 	& + & {
-		margin-top: math.div($gutter, 2);
+		margin-top: 16px;
 	}
 
 	&._subtext,
 	& ._subtext {
-		@include text_subtext;
+		@include text.subtext;
 	}
 
 	&._footnote,
 	& ._footnote {
-		@include text_footnote;
+		@include text.footnote;
 	}
 }
 
@@ -88,8 +87,4 @@ p._no-margin,
 }
 ._text-lowercase {
 	text-transform: lowercase;
-}
-
-:root {
-	--family-primary: #{$family_primary};
 }

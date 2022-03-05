@@ -1,0 +1,50 @@
+:root {
+	//  Исходные цвета
+	--color-basic-text: #232323;
+	--color-basic-back: #f2f2f2;
+	--color-basic-primary: #b3e5fc;
+	--color-basic-secondary: #ef9a9a;
+	--color-basic-success: #00e676;
+	--color-basic-warning: #ffeb3b;
+	--color-basic-danger: #e53935;
+	--color-basic-info: #03a9f4;
+	--color-basic-muted: #bfbfbf;
+
+	--color-basic-text--light: #4b4b4b;
+	--color-basic-back--light: #ffffff;
+	--color-basic-primary--light: #e6ffff;
+	--color-basic-secondary--light: #ffcccb;
+	--color-basic-success--light: #66ffa6;
+	--color-basic-warning--light: #ffff72;
+	--color-basic-danger--light: #ff6f60;
+	--color-basic-info--light: #67daff;
+	--color-basic-muted--light: #f2f2f2;
+
+	--color-basic-text--dark: #000000;
+	--color-basic-back--dark: #bfbfbf;
+	--color-basic-primary--dark: #82b3c9;
+	--color-basic-secondary--dark: #ba6b6c;
+	--color-basic-success--dark: #00b248;
+	--color-basic-warning--dark: #c8b900;
+	--color-basic-danger--dark: #ab000d;
+	--color-basic-info--dark: #007ac1;
+	--color-basic-muted--dark: #8f8f8f;
+
+	//  Цвета по назначению
+	--color-text: var(--color-basic-text);
+	--color-text--inverse: var(--color-basic-back);
+
+	--color-back: var(--color-basic-back);
+	--color-back--inverse: var(--color-basic-text);
+
+	--color-primary: var(--color-basic-primary);
+	--color-primary--hover: var(--color-basic-primary--light);
+
+	--color-secondary: var(--color-basic-secondary);
+	--color-secondary--hover: var(--color-basic-secondary--light);
+
+	--color-success: var(--color-basic-success);
+	--color-warning: var(--color-basic-warning);
+	--color-danger: var(--color-basic-danger);
+	--color-info: var(--color-basic-info);
+}

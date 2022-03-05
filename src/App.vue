@@ -1,32 +1,32 @@
 <template>
 	<div class="app">
-		<Layout>
-			<BlockHeader>
-				<MarkupContainer>
-					<BaseLink :to="{ name: 'home' }">home</BaseLink>
-					<BaseLink :to="{ name: 'storybook' }" active-class="bebebe">storybook</BaseLink>
-					<BaseLink to="https://google.com">External Link</BaseLink>
-				</MarkupContainer>
-			</BlockHeader>
-			<RouterView></RouterView>
-		</Layout>
+<!--		<Layout>-->
+<!--			<BlockHeader>-->
+<!--				<MarkupContainer>-->
+<!--					<BaseLink :to="{ name: 'home' }">home</BaseLink>-->
+<!--					<BaseLink :to="{ name: 'storybook' }" active-class="bebebe">storybook</BaseLink>-->
+<!--					<BaseLink to="https://google.com">External Link</BaseLink>-->
+<!--				</MarkupContainer>-->
+<!--			</BlockHeader>-->
+<!--			<RouterView></RouterView>-->
+<!--		</Layout>-->
 	</div>
 </template>
 
 <script>
-import Layout from '/src/layouts/index.vue';
-import BaseLink	from '/src/components/base/link/index.vue';
-import MarkupContainer from '/src/components/markup/container/index.vue';
-import BlockHeader from '/src/components/block/header/index.vue';
+// import Layout from '/src/layouts/index.vue';
+// import BaseLink	from '/src/components/base/link/index.vue';
+// import MarkupContainer from '/src/components/markup/container/index.vue';
+// import BlockHeader from '/src/components/block/header/index.vue';
 
 export default {
 	name: 'App',
 
 	components: {
-		Layout,
-		BaseLink,
-		MarkupContainer,
-		BlockHeader,
+		// Layout,
+		// BaseLink,
+		// MarkupContainer,
+		// BlockHeader,
 	},
 }
 </script>
@@ -34,6 +34,7 @@ export default {
 <style lang="scss">
 .app {
 	width: 100%;
+	color: var(--color-basic-muted--light);
 
 	&__container {
 		width: 100%;

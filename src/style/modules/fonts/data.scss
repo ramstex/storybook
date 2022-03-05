@@ -1,0 +1,55 @@
+@use "sass:map";
+
+$dir: '../../../assets/fonts/';
+$formats: (
+	'eot',
+	'ttf',
+	'svg',
+	'woff',
+	'woff2',
+);
+
+$families: (
+	primary: (
+		family: 'Montserrat',
+		familyAlt: 'Times New Roman, serif',
+
+		styles: (
+			regular: (
+				filename: 'Montserrat-Regular',
+			),
+
+			bold: (
+				filename: 'Montserrat-Bold',
+				weight: bold,
+			),
+		),
+	),
+
+	secondary: (
+		family: 'Montserrat',
+		familyAlt: 'Arial, sans-serif',
+
+		styles: (
+			regular: (
+				filename: 'Montserrat-Regular',
+			),
+
+			bold: (
+				filename: 'Montserrat-Bold',
+				weight: bold,
+			),
+		),
+	),
+);
+
+@function getFamily($family: 'primary') {
+	$family: map.get($families, $family);
+	$result: map.get($family, 'family');
+
+	@if (index($family, 'familyAlt') != null) {
+		$result: $result + ', ' + map.get($family, 'familyAlt');
+	}
+
+	@return $result;
+}

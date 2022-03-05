@@ -67,12 +67,12 @@
 
 <style lang="scss">
 	@use 'sass:math';
-	@import '../../../../style/globals/src.scss';
+	@import '../../../../style/modules/src.scss';
 
 	.markup-grid-row {
 		display: flex;
-		margin-left: math.div(-$gutter, 2);
-		margin-right: math.div(-$gutter, 2);
+		margin-left: math.div(-32px, 2);
+		margin-right: math.div(-32px, 2);
 
 		&._wrap {
 			flex-wrap: wrap;

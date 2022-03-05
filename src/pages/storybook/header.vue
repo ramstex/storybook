@@ -8,10 +8,15 @@
 		<MarkupGrid class="storybook-header__nav">
 			<MarkupGridRow>
 				<MarkupGridCol>
-					<BaseLink :to="{ name: 'storybook-text' }">Text</BaseLink>
+					<BaseLink :to="{ name: 'storybook-text' }">Стили текста</BaseLink>
 				</MarkupGridCol>
+
 				<MarkupGridCol>
-					<BaseLink :to="{ name: 'storybook-input' }">Input</BaseLink>
+					<BaseLink :to="{ name: 'storybook-color' }">Цвета</BaseLink>
+				</MarkupGridCol>
+
+				<MarkupGridCol>
+					<BaseLink :to="{ name: 'storybook-input' }">UI - инпуты</BaseLink>
 				</MarkupGridCol>
 			</MarkupGridRow>
 		</MarkupGrid>
@@ -56,16 +61,16 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../style/globals/src.scss';
+@import '../../style/modules/src.scss';
 
 .storybook-header {
 	&__title {
-		margin-top: $gutter;
+		margin-top: 32px;
 	}
 
 	&__nav {
-		margin-top: $gutter;
-		margin-bottom: $gutter;
+		margin-top: 32px;
+		margin-bottom: 32px;
 	}
 }
 </style>

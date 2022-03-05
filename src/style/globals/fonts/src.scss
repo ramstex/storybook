@@ -1,7 +1,0 @@
-$family_primary: Montserrat, Arial, sans-serif;
-$font_dir: '../../../assets/fonts/';
-
-//	Миксин шрифта
-@mixin family_primary {
-	font-family: $family_primary;
-}
