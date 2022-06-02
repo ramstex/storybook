@@ -1,86 +1,76 @@
 <template>
-	<router-link
-		class="base-link"
-		v-if="isInternal"
-		:to="$attrs.to"
-		v-bind="$attrs"
-		@click="onClick"
-		@mouseenter="onMouseEnter"
-		@mouseleave="onMouseLeave"
-	>
-		<slot />
-	</router-link>
-
 	<a
 		class="base-link"
-		v-else-if="isExternal"
-		:href="$attrs.to"
+		:class="rootClass"
+		v-if="isExternal"
+		:href="href"
 		target="_blank"
-		@click="onClick"
-		@mouseenter="onMouseEnter"
-		@mouseleave="onMouseLeave"
+		v-bind="$attrs"
 	>
 		<slot />
 	</a>
 
-	<component
+	<router-link
 		class="base-link"
-		v-else
-		:is="tag"
-		@click="onClick"
-		@mouseenter="onMouseEnter"
-		@mouseleave="onMouseLeave"
+		:class="rootClass"
+		v-else-if="isHref"
+		:to="href"
+		v-bind="$attrs"
 	>
 		<slot />
-	</component>
+	</router-link>
+
+	<span
+		class="base-link"
+		:class="rootClass"
+		v-else
+		v-bind="$attrs"
+	>
+		<slot />
+	</span>
 </template>
 
 <script>
-import { isAbsoluteUrl } from '../../../plugins/helper.js';
+	export default {
+		name: 'BaseLink',
 
-export default {
-	name: 'BaseLink',
-	inheritAttrs: false,
+		inheritAttrs: false,
 
-	props: {
-		tag: {
-			type: String,
-			default: 'div',
-		},
-	},
-
-	computed: {
-		isLink() {
-			return !!this.$attrs.to;
+		props: {
+			href: {
+				type: String,
+				required: true,
+			},
 		},
 
-		isInternal() {
-			return this.isLink && !isAbsoluteUrl(this.$attrs.to);
-		},
+		computed: {
+			rootClass() {
+				return [
+					{ '_external': this.isExternal },
+					{ '_internal': !this.isExternal },
+				]
+			},
 
-		isExternal() {
-			return this.isLink && isAbsoluteUrl(this.$attrs.to);
-		},
-	},
+			isHref() {
+				return !!this.href;
+			},
 
-	methods: {
-		onClick(event) {
-			this.$emit('click', event);
-		},
+			isExternal() {
+				const protocols = [
+					'http://',
+					'https://',
+					'ssh://',
+					'ftp://',
+				];
 
-		onMouseEnter(event) {
-			this.$emit('mouseenter', event);
+				return this.isHref && !!protocols.find((protocol) => {
+					return this.href.indexOf(protocol) === 0;
+				});
+			},
 		},
-
-		onMouseLeave(event) {
-			this.$emit('mouseleave', event);
-		},
-	},
-}
+	};
 </script>
 
 <style lang="scss">
-	.base-link {
-
-	}
+	.base-link {}
 </style>

@@ -1,0 +1,17 @@
+@use 'sass:math';
+
+$gap: 32px;
+$dur: .5s;
+
+@function adapt($size: 0, $layout: 360, $unit: 'vw') {
+	$result: #{(math.div($size, $layout) * 100) + $unit};
+	@return $result;
+}
+
+@function adaptVw($size: 0, $layout: 360) {
+	@return adapt($size, $layout, 'vw');
+}
+
+@function adaptVh($size: 0, $layout: 360) {
+	@return adapt($size, $layout, 'vh');
+}

@@ -213,7 +213,6 @@
 </script>
 
 <style lang="scss">
-	@use 'sass:math';
 	@import '../../../style/modules/src.scss';
 
 	.ui-input {

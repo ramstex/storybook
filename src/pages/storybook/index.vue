@@ -1,31 +1,43 @@
 <template>
 	<div class="page-storybook">
-		<MarkupContainer>
-			<StorybookHeader />
-		</MarkupContainer>
+		<LocalHeader />
 	</div>
 </template>
 
 <script>
-import StorybookHeader from './header.vue';
-import MarkupContainer from '../../components/markup/container/index.vue';
+import { ref } from 'vue';
+
+import BaseLink from '/src/components/base/link/index.vue';
+import MarkupContainer from '/src/components/markup/container/index.vue';
+import Grid, { GridRow, GridCol } from '/src/components/grid/index.vue';
+import LocalHeader from './_components/header/index.vue';
 
 export default {
 	name: 'PageStorybook',
 
 	components: {
-		StorybookHeader,
+		BaseLink,
 		MarkupContainer,
+		Grid,
+		GridRow,
+		GridCol,
+		LocalHeader,
 	},
-};
+
+	setup() {
+		const sbNav = ref([
+			{
+				title: 'Типографика',
+				href: ''
+			}
+		]);
+		return {};
+	},
+}
 </script>
 
 <style lang="scss">
-@import '../../style/modules/src.scss';
+.page-home {
 
-.page-storybook {
-	&__nav {
-		margin-top: 32px;
-	}
 }
 </style>

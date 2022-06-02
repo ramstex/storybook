@@ -8,7 +8,7 @@
 <!--					<BaseLink to="https://google.com">External Link</BaseLink>-->
 <!--				</MarkupContainer>-->
 <!--			</BlockHeader>-->
-<!--			<RouterView></RouterView>-->
+			<RouterView />
 <!--		</Layout>-->
 	</div>
 </template>
@@ -32,12 +32,7 @@ export default {
 </script>
 
 <style lang="scss">
-.app {
-	width: 100%;
-	color: var(--color-basic-muted--light);
+	.app {
 
-	&__container {
-		width: 100%;
 	}
-}
 </style>

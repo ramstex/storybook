@@ -35,13 +35,13 @@
 <style lang="scss">
 	//@import "../../../style/modules/src.scss";
 	//
-	//.markup-container {
-	//	width: 100%;
-	//	padding-left: vRel();
-	//	padding-right: vRel();
-	//	margin-left: auto;
-	//	margin-right: auto;
-	//
+	.markup-container {
+		width: 100%;
+		//padding-left: vRel();
+		//padding-right: vRel();
+		margin-left: auto;
+		margin-right: auto;
+
 	//	@media (min-width: mediaTabletSm()) {
 	//		padding-left: 32px;
 	//		padding-right: 32px;
@@ -52,20 +52,20 @@
 	//	}
 	//
 	//	@media (min-width: mediaDesktopMd()) {
-	//		max-width: 1200px;
+			max-width: 1200px;
 	//	}
 	//
 	//	@media (min-width: mediaDesktopLg()) {
 	//		max-width: 1400px;
 	//	}
-	//
-	//	&._wide {
-	//		max-width: none;
-	//	}
-	//
-	//	&._tight {
-	//		padding-left: 0;
-	//		padding-right: 0;
-	//	}
-	//}
+
+		&._wide {
+			max-width: none;
+		}
+
+		&._tight {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
 </style>

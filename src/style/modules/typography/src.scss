@@ -1,3 +1,5 @@
+@use '/src/style/modules/media/src.scss' as media;
+
 //	Миксин для заголовка 1-ого уровня
 @mixin h1 {
 	font-weight: 600;

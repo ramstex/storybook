@@ -16,7 +16,7 @@
 </template>
 
 <script>
-	import BaseLink from '../link/index.vue';
+	import BaseLink from '/src/components/base/link/index.vue';
 
 	export default {
 		name: 'BaseLogo',

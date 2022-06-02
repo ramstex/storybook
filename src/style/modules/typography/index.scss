@@ -1,90 +1,51 @@
-@use 'sass:math';
-@use 'data.scss' as text;
+@use 'src.scss' as typography;
 
 //	Дефолтные стили
 h1,
 .h1 {
-	@include text.h1;
-	margin-bottom: 32px;
+	@include typography.h1;
 }
 
 h2,
 .h2 {
-	@include text.h2;
-	margin-bottom: 24px;
+	@include typography.h2;
 }
 
 h3,
 .h3 {
-	@include text.h3;
-	margin-bottom: 24px;
+	@include typography.h3;
 }
 
 h4,
 .h4 {
-	@include text.h4;
-	margin-bottom: 16px;
+	@include typography.h4;
 }
 
 h5,
 .h5 {
-	@include text.h5;
-	margin-bottom: 16px;
+	@include typography.h5;
 }
 
 h6,
 .h6 {
-	@include text.h6;
-	margin-bottom: 16px;
+	@include typography.h6;
 }
 
 p,
 .p {
-	@include text.p;
-
-	& + & {
-		margin-top: 16px;
-	}
+	@include typography.p;
 
 	&._subtext,
 	& ._subtext {
-		@include text.subtext;
+		@include typography.subtext;
 	}
 
 	&._footnote,
 	& ._footnote {
-		@include text.footnote;
+		@include typography.footnote;
 	}
 }
 
 a {
 	color: inherit;
-}
-
-//	Модификаторы
-h1._no-margin,
-.h1._no-margin,
-h2._no-margin,
-.h2._no-margin,
-h3._no-margin,
-.h3._no-margin,
-h4._no-margin,
-.h4._no-margin,
-h5._no-margin,
-.h5._no-margin,
-h6._no-margin,
-.h6._no-margin {
-	margin-bottom: 0;
-}
-
-p._no-margin,
-.p._no-margin {
-	margin-top: 0;
-}
-
-._text-uppercase {
-	text-transform: uppercase;
-}
-._text-lowercase {
-	text-transform: lowercase;
 }

@@ -1,5 +1,5 @@
 <template>
-	<header class="block-header">
+	<header class="header">
 		<slot></slot>
 	</header>
 </template>
@@ -11,10 +11,10 @@ export default {
 </script>
 
 <style lang="scss">
-@use "sass:math";
-@import "../../../style/modules/src.scss";
+	@use "sass:math";
+	@use "/src/style/modules/base/src.scss" as base;
 
-.block-header {
-	padding: 16px 0;
-}
+	.header {
+		padding: 16px 0;
+	}
 </style>

@@ -1,0 +1,166 @@
+$breakpoints: (
+	mobile: (
+		sm: 360px,
+		md: 520px,
+		lg: 640px,
+	),
+	tablet: (
+		sm: 768px,
+		md: 920px,
+		lg: 1024px,
+	),
+	desktop: (
+		sm: 1280px,
+		md: 1440px,
+		lg: 1680px,
+	),
+);
+
+@function breakpoint($device: 'mobile', $breakpoint: 'sm', $modifier: 0) {
+	$device: map-get($breakpoints, $device);
+	@return map-get($device, $breakpoint) + $modifier;
+}
+
+@function mobileSm($modifier: 0) {
+	@return breakpoint('mobile', 'sm', $modifier);
+}
+
+@function mobileMd($modifier: 0) {
+	@return breakpoint('mobile', 'md', $modifier);
+}
+
+@function mobileLg($modifier: 0) {
+	@return breakpoint('mobile', 'lg', $modifier);
+}
+
+@function tabletSm($modifier: 0) {
+	@return breakpoint('tablet', 'sm', $modifier);
+}
+
+@function tabletMd($modifier: 0) {
+	@return breakpoint('tablet', 'md', $modifier);
+}
+
+@function tabletLg($modifier: 0) {
+	@return breakpoint('tablet', 'lg', $modifier);
+}
+
+@function desktopSm($modifier: 0) {
+	@return breakpoint('desktop', 'sm', $modifier);
+}
+
+@function desktopMd($modifier: 0) {
+	@return breakpoint('desktop', 'md', $modifier);
+}
+
+@function desktopLg($modifier: 0) {
+	@return breakpoint('desktop', 'lg', $modifier);
+}
+
+@mixin minMobileSm {
+	@media (min-width: mobileSm()){
+		@content;
+	}
+}
+
+@mixin minMobileMd {
+	@media (min-width: mobileMd()){
+		@content;
+	}
+}
+
+@mixin minMobileLg {
+	@media (min-width: mobileLg()){
+		@content;
+	}
+}
+
+@mixin minTabletSm {
+	@media (min-width: tabletSm()){
+		@content;
+	}
+}
+
+@mixin minTabletMd {
+	@media (min-width: tabletMd()){
+		@content;
+	}
+}
+
+@mixin minTabletLg {
+	@media (min-width: tabletLg()){
+		@content;
+	}
+}
+
+@mixin minDesktopSm {
+	@media (min-width: desktopSm()){
+		@content;
+	}
+}
+
+@mixin minDesktopMd {
+	@media (min-width: desktopMd()){
+		@content;
+	}
+}
+
+@mixin minDesktopLg {
+	@media (min-width: desktopLg()){
+		@content;
+	}
+}
+
+@mixin maxMobileSm {
+	@media (max-width: mobileSm(1)){
+		@content;
+	}
+}
+
+@mixin maxMobileMd {
+	@media (max-width: mobileMd(1)){
+		@content;
+	}
+}
+
+@mixin maxMobileLg {
+	@media (max-width: mobileLg(1)){
+		@content;
+	}
+}
+
+@mixin maxTabletSm {
+	@media (max-width: tabletSm(1)){
+		@content;
+	}
+}
+
+@mixin maxTabletMd {
+	@media (max-width: tabletMd(1)){
+		@content;
+	}
+}
+
+@mixin maxTabletLg {
+	@media (max-width: tabletLg(1)){
+		@content;
+	}
+}
+
+@mixin maxDesktopSm {
+	@media (max-width: desktopSm(1)){
+		@content;
+	}
+}
+
+@mixin maxDesktopMd {
+	@media (max-width: desktopMd(1)){
+		@content;
+	}
+}
+
+@mixin maxDesktopLg {
+	@media (max-width: desktopLg(1)){
+		@content;
+	}
+}
